@@ -266,56 +266,56 @@ export default function Home() {
 
       {/* Step 3: Ticket Generation */}
       {step === 3 && (
-  <div className="p-6">
-    <div className="mt-8 p-6 border-2 border-blue-100 rounded-md bg-white shadow-lg">
-      <h2 className="font-bold text-xl text-[40px] text-blue-500 mb-4 text-center">Techember Fest &quot; 25</h2>
-      <div className="flex flex-row items-center gap-8">
-        {/* Left Side: Avatar Image */}
-        <div className="flex-shrink-0">
-          <Image
-            src={ticket.avatarUrl}
-            alt="User Avatar"
-            width={120} // Increase the size of the avatar
-            height={120}
-            className="rounded-full"
-          />
-        </div>
+        <div className="p-6">
+          <div className="mt-8 p-6 border-2 border-blue-100 rounded-md bg-white shadow-lg">
+            <h2 className="font-bold text-xl text-[40px] text-blue-500 mb-4 text-center">Techember Fest &quot; 25</h2>
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              {/* Left Side: Avatar Image */}
+              <div className="flex-shrink-0">
+                <Image
+                  src={ticket.avatarUrl}
+                  alt="User Avatar"
+                  width={120} // Default size for larger screens
+                  height={120}
+                  className="rounded-full w-20 h-20 md:w-32 md:h-32" // Smaller size for mobile
+                />
+              </div>
 
-        {/* Right Side: Ticket Details */}
-        <div className="flex flex-col space-y-2">
-          <div>
-            <strong>Attendee:</strong>
-            <p className="text-gray-700">{ticket.fullName}</p>
+              {/* Right Side: Ticket Details */}
+              <div className="flex flex-col space-y-2 text-center md:text-left">
+                <div>
+                  <strong>Attendee:</strong>
+                  <p className="text-gray-700">{ticket.fullName}</p>
+                </div>
+                <div>
+                  <strong>Ticket Type:</strong>
+                  <p className="text-gray-700">{ticket.ticketType}</p>
+                </div>
+                <div>
+                  <strong>Number of Seats:</strong>
+                  <p className="text-gray-700">{ticket.numberOfSeats}</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong>Ticket Type:</strong>
-            <p className="text-gray-700">{ticket.ticketType}</p>
-          </div>
-          <div>
-            <strong>Number of Seats:</strong>
-            <p className="text-gray-700">{ticket.numberOfSeats}</p>
+
+          {/* Navigation Buttons */}
+          <div className="flex justify-center gap-4 mt-6">
+            <button
+              onClick={() => setStep(2)}
+              className="border-2 rounded-md py-2 px-8 md:px-14 border-blue-100 text-blue-300 hover:bg-blue-100 transition-colors"
+            >
+              Back
+            </button>
+            <button
+              onClick={() => setStep(1)}
+              className="border-blue-600 bg-blue-600 border rounded-md py-2 px-8 md:px-14 text-white hover:bg-blue-700 transition-colors"
+            >
+              Home
+            </button>
           </div>
         </div>
-      </div>
-    </div>
-
-    {/* Navigation Buttons */}
-    <div className="flex justify-center gap-4 mt-6">
-      <button
-        onClick={() => setStep(2)}
-        className="border-2 rounded-md py-2 px-8 md:px-14 border-blue-100 text-blue-300 hover:bg-blue-100 transition-colors"
-      >
-        Back
-      </button>
-      <button
-        onClick={() => setStep(1)}
-        className="border-blue-600 bg-blue-600 border rounded-md py-2 px-8 md:px-14 text-white hover:bg-blue-700 transition-colors"
-      >
-        Home
-      </button>
-    </div>
-  </div>
-)}
+      )}
     </section>
   );
 }
