@@ -42,8 +42,8 @@ const Navbar = () => {
       {/* My Ticket Button */}
       <div
         className={`${
-          isMenuOpen ? 'block' : 'hidden'
-        } w-full sm:w-auto sm:block border flex flex-row p-3 gap-2 bg-blue-500 text-white rounded-xl cursor-pointer mt-4 sm:mt-0`}
+          isMenuOpen ? 'flex' : 'hidden'
+        } sm:flex items-center border p-3 gap-2 bg-blue-500 text-white rounded-xl cursor-pointer mt-4 sm:mt-0`}
       >
         <h1>My Ticket</h1>
         <ArrowRight size={20} />
